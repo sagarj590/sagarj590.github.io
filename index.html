@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Neighborhood Map</title>
+  <!--Google fonts taken from https://fonts.google.com/specimen/Merriweather. -->
+    <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Merriweather' type='text/css'>
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	  <link rel="stylesheet" type="text/css" href="css/style.css">
+	  
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row" style="padding-bottom: 32px;">
+	  <!-- Bootstrap applied -->
+			<div class="col-xs-12 header">
+				<h1>My Neighborhood: Pune</h1>
+				<p>Below are listed some of My Favourite Eateries in Pune City.</p>
+			</div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-4">
+        <div id="error"><h4><span data-bind="text: errorDisplay"></span></h4></div>
+        <div style="width:100%;" class="input-group">
+          <input id="filterInputText" type="text" class="form-control" placeholder="Search By Name" data-bind="value: filterText, valueUpdate: 'afterkeydown', event: {keyup: applyFilter}">
+        </div>
+		<!-- Knockout JS is used to bind this list -->
+        <ul class="list-group" data-bind="foreach: mapList">
+          <a class="list-group-item" data-bind="css: {active: selected}, text: name, visible: show, click: $parent.setSelected"></a>
+        </ul>
+      </div>
+
+      <div class="col-sm-8">
+        <div id="map"></div>
+      </div>
+    </div>
+  </div>
+<!-- Google Maps Initialize function -->
+<!-- mapTypeControl is set to false for custom controls -->
+  <script type="text/javascript">
+		var map, infoWindow;
+		function initMap() {
+		  map = new google.maps.Map(
+			  	document.getElementById('map'),
+			  	{
+				    center: {lat: 18.5204, lng: 73.8567},
+				    zoom: 12,
+				    mapTypeControl: false
+			  	}
+		  	);
+		  infowindow = new google.maps.InfoWindow();
+		  ko.applyBindings(new viewModel());
+		}
+
+    function googleError(){
+      document.getElementById('map-error').innerHTML = "Error in the Map."
+    }
+	</script>
+	<!--Other .JS files that are linked-->
+	<script type='text/javascript' src='js/jquery.min.js'></script>
+    <script src="js/knockout-3.4.0.js"></script>
+    <script src="js/app.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBH8okO_Hozp4OHGDKgpmDiMbEJdawGXQY&callback=initMap" onerror="googleError()" ></script>
+</body>
+</html>
