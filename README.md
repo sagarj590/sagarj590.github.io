@@ -17,8 +17,9 @@
 2. Click on any of the places on the map/list for more information about ratings and likes.
 3. You can filter out places by typing in the search box to make them easier to spot.
 4. You can scroll up and down for zooming in and out of the map.
+
 ## How the App looks
-![screenshot](/images/screenshot.png)
+![screenshot](https://github.com/sagarj590/sagarj590.github.io/blob/master/images/screenshot.PNG)
 
 ## Resources
 - [Google Maps Javascript API Tutorial](https://www.youtube.com/watch?v=Zxf1mnP5zcw)
