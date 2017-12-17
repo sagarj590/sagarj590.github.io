@@ -10,13 +10,19 @@
 
 - The App is responsive by use of media queries, i.e. resizes according to screen sizes and can work on PC's, mobile devices, and tablets too. 
 
-- Knockout JS allows the app to be organized in MVVM patter. 
+- Knockout JS allows the app to be organized in MVVM pattern. 
 
 ## How To Use
 1. Click on [Neighborhood Map](https://sagarj590.github.io) to try it out.
 2. Click on any of the places on the map/list for more information about ratings and likes.
 3. You can filter out places by typing in the search box to make them easier to spot.
 4. You can scroll up and down for zooming in and out of the map.
+
+## How to run the app locally
+1. First download the project Zip file or clone the Repository.
+2. Open the `index.html` in your browser.
+3. Click on the markers or list which displays the `infoWindow` about likes and ratings about the venue.
+4. You need to be connected to the internet, only then Foursquare data will be displayed.
 
 ## How the App looks
 ![screenshot](https://github.com/sagarj590/sagarj590.github.io/blob/master/images/screenshot.PNG)
