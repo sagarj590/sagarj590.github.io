@@ -190,3 +190,8 @@ var viewModel = function() {
         self.makeBounce(location);
 	};
 };
+
+// Google Map error handling function
+googleError = function() {
+  alert("There was an error while loading Google Maps!")
+};
